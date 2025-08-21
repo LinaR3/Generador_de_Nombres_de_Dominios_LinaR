@@ -1,4 +1,4 @@
-console.log("Empezare a trabajar");
+
 
 
 let pronoun = ['El', 'Mi', 'Nuestro', 'La', 'Su'];
