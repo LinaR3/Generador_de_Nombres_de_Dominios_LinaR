@@ -30,46 +30,25 @@ btn.addEventListener("click", () => {
   excuseElement.textContent = generateDomain();
 });
 
-console.log("Ya generé unos dominios :)"); 
+console.log("Ya generé unos dominios :)");
 
-
-// 🎨 Fondo tipo Glitch con cubos (amarillo -> gris)
-const canvas = document.getElementById("glitchCanvas");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const cubeSize = 20;
-const cols = Math.floor(canvas.width / cubeSize);
-const rows = Math.floor(canvas.height / cubeSize);
-
-// Genera un color random entre amarillo y gris
-function getRandomColor() {
-  const shades = [
-    "#ffcc00", "#ffaa00", "#888888", "#bbbbbb", "#666666", "#444444"
-  ];
-  return shades[Math.floor(Math.random() * shades.length)];
-}
-
-// Dibuja los cubos
-function drawCubes() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  for (let x = 0; x < cols; x++) {
-    for (let y = 0; y < rows; y++) {
-      if (Math.random() > 0.7) {
-        ctx.fillStyle = getRandomColor();
-        ctx.fillRect(x * cubeSize, y * cubeSize, cubeSize, cubeSize);
-      }
-    }
+// 🔹 Animación de cubos laterales (glitch)
+function createCubes(wallId) {
+  const wall = document.getElementById(wallId);
+  for (let i = 0; i < 300; i++) {
+    const cube = document.createElement("div");
+    cube.classList.add("cube");
+    wall.appendChild(cube);
   }
 }
 
-// Loop de animación glitch
-function animate() {
-  drawCubes();
-  requestAnimationFrame(animate);
-}
+createCubes("leftWall");
+createCubes("rightWall");
 
-animate();
+// Cambiar colores de cubos aleatoriamente (amarillo → gris)
+setInterval(() => {
+  document.querySelectorAll(".cube").forEach(cube => {
+    const colors = ["#ffcc00", "#ffaa00", "#999", "#bbb", "#666"];
+    cube.style.background = colors[Math.floor(Math.random() * colors.length)];
+  });
+}, 500);
