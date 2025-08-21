@@ -1,40 +1,75 @@
-// Domain Name Generator - Homework
-console.log("=== Domain Name Generator ===");
+console.log("Empezare a trabajar");
 
-// Arrays con las palabras
+// Arrays base
 let pronoun = ['the', 'our', 'my'];
 let adj = ['great', 'big', 'best', 'cool'];
 let noun = ['jogger', 'racoon', 'studio', 'net', 'app'];
-
-// Extensiones de dominio
 let extensions = ['.com', '.net', '.us', '.io', '.es'];
 
-console.log("Generating all possible domain combinations...\n");
+// Elementos del DOM
+const excuseElement = document.getElementById("excuse");
+const btn = document.getElementById("generateBtn");
 
-// Bucles anidados para generar todas las combinaciones
-for (let i = 0; i < pronoun.length; i++) {
-    for (let j = 0; j < adj.length; j++) {
-        for (let k = 0; k < noun.length; k++) {
-            for (let l = 0; l < extensions.length; l++) {
-                
-                // Verificar si es un "domain hack"
-                if (noun[k].endsWith(extensions[l].substring(1))) {
-                    // Domain hack: quitar la extensión del final del sustantivo
-                    let hackNoun = noun[k].slice(0, noun[k].length - extensions[l].length + 1);
-                    let hackDomain = pronoun[i] + adj[j] + hackNoun + extensions[l];
-                    console.log(hackDomain + " (domain hack)");
-                } else {
-                    // Dominio normal
-                    let normalDomain = pronoun[i] + adj[j] + noun[k] + extensions[l];
-                    console.log(normalDomain);
-                }
-            }
-        }
-    }
+// Función que genera un dominio aleatorio
+function generateDomain() {
+  let i = Math.floor(Math.random() * pronoun.length);
+  let j = Math.floor(Math.random() * adj.length);
+  let k = Math.floor(Math.random() * noun.length);
+  let l = Math.floor(Math.random() * extensions.length);
+
+  if (noun[k].endsWith(extensions[l].substring(1))) {
+    let hackNoun = noun[k].slice(0, noun[k].length - extensions[l].length + 1);
+    return pronoun[i] + adj[j] + hackNoun + extensions[l] + " (domain hack)";
+  } else {
+    return pronoun[i] + adj[j] + noun[k] + extensions[l];
+  }
 }
 
-console.log("\n=== Generation Complete! ===");
-console.log("Total combinations generated!");
+// Evento click para generar un nuevo dominio
+btn.addEventListener("click", () => {
+  excuseElement.textContent = generateDomain();
+});
 
-// Mensaje adicional para cumplir con el requisito
-console.log("This domain generator was created for homework assignment.");
+console.log("Ya generé unos dominios :)"); 
+
+
+// 🎨 Fondo tipo Glitch con cubos (amarillo -> gris)
+const canvas = document.getElementById("glitchCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const cubeSize = 20;
+const cols = Math.floor(canvas.width / cubeSize);
+const rows = Math.floor(canvas.height / cubeSize);
+
+// Genera un color random entre amarillo y gris
+function getRandomColor() {
+  const shades = [
+    "#ffcc00", "#ffaa00", "#888888", "#bbbbbb", "#666666", "#444444"
+  ];
+  return shades[Math.floor(Math.random() * shades.length)];
+}
+
+// Dibuja los cubos
+function drawCubes() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for (let x = 0; x < cols; x++) {
+    for (let y = 0; y < rows; y++) {
+      if (Math.random() > 0.7) {
+        ctx.fillStyle = getRandomColor();
+        ctx.fillRect(x * cubeSize, y * cubeSize, cubeSize, cubeSize);
+      }
+    }
+  }
+}
+
+// Loop de animación glitch
+function animate() {
+  drawCubes();
+  requestAnimationFrame(animate);
+}
+
+animate();

@@ -1,5 +1,73 @@
-@import "bootstrap/dist/css/bootstrap.min.css";
+body {
+  background-color: #3c1361;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
-body{
-    background: white;
+.bitcount-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+img {
+  max-width: 10cm;
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+#excuse {
+  font-size: 1.5rem;
+  background-color: #f9c74f;
+  color: #000;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+a {
+  color: #fcbf49;
+  font-weight: bold;
+}
+
+.fixed-bottom {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Paredes de cubos */
+.cube-wall {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 20px);
+  grid-auto-rows: 20px;
+  gap: 2px;
+  z-index: 1;
+}
+
+.left-wall {
+  left: 0;
+}
+
+.right-wall {
+  right: 0;
+}
+
+.cube {
+  width: 20px;
+  height: 20px;
+  background: gray;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  transform: perspective(400px) rotateX(10deg) rotateY(10deg);
+  border-radius: 3px;
+  transition: background 0.3s ease;
 }
