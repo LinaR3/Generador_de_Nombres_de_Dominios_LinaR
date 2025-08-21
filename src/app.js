@@ -1,10 +1,10 @@
 console.log("Empezare a trabajar");
 
-// Arrays base
+
 let pronoun = ['El', 'Mi', 'Nuestro', 'La', 'Su'];
 let adj = ['gran', 'hermoso', 'auténtico', 'inteligente', 'astuto'];
 let noun = ['perro', 'mapache', 'chigüiro', 'gato', 'pez', 'abuela', 'padre'];
-let verbo = ['arruinó', 'se comió', 'saboteó', 'canceló', 'dañó', 'secuestró', 'me convenció'];
+let verbo = ['arruinó', 'se comió', 'saboteó', 'canceló', 'dañó', 'secuestró', 'mordio'];
 let objeto = ['mi tarea', 'el informe', 'mi almuerzo', 'mi proyecto', 'la reunión', 'mi computador']; // 🔹 nuevo
 
 const excuseElement = document.getElementById("excuse");
