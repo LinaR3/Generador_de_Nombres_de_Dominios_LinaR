@@ -1,73 +1,78 @@
+/* General */
 body {
-  background-color: #3c1361;
+  background-color: #3c1361; /* morado tecnológico */
   color: white;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
 }
 
+/* Título */
 .bitcount-title {
   font-family: 'Orbitron', sans-serif;
   font-size: 3rem;
-  font-weight: 700;
-  margin-top: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  text-align: center;
+  margin: 2rem 0;
+  color: #f9c74f;
+  text-shadow: 0 0 10px #f9c74f, 0 0 20px #ffcc00;
 }
 
-img {
-  max-width: 10cm;
-  width: 100%;
+/* Imagen */
+.container-fluid img {
+  max-width: 250px;
   height: auto;
-  margin-top: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(249, 199, 79, 0.6);
 }
 
+/* Resultado */
 #excuse {
-  font-size: 1.5rem;
-  background-color: #f9c74f;
-  color: #000;
+  font-size: 1.6rem;
+  background-color: #fff;
+  color: #3c1361;
+  border: 1px solid #ffcc00;
   border-radius: 10px;
   display: inline-block;
-  padding: 10px 20px;
-}
-
-a {
-  color: #fcbf49;
+  padding: 12px 24px;
+  margin-top: 1rem;
   font-weight: bold;
+  text-align: center;
 }
 
+/* Botón */
+#generateBtn {
+  display: block; /* 🔹 fuerza centrado */
+  margin: 1rem auto;
+  background-color: #ffcc00;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#generateBtn:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+}
+
+/* Footer */
 .fixed-bottom {
-  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+  color: #fff;
 }
 
-/* 🔹 Paredes de cubos */
-.cube-wall {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  display: grid;
-  grid-template-columns: repeat(6, 20px);
-  grid-auto-rows: 20px;
-  gap: 2px;
-  z-index: 1;
+.fixed-bottom a {
+  color: #f9c74f;
+  text-decoration: none;
 }
 
-.left-wall {
-  left: 0;
-}
-
-.right-wall {
-  right: 0;
-}
-
-.cube {
-  width: 20px;
-  height: 20px;
-  background: gray;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-  transform: perspective(400px) rotateX(10deg) rotateY(10deg);
-  border-radius: 3px;
-  transition: background 0.3s ease;
+.fixed-bottom a:hover {
+  text-decoration: underline;
 }

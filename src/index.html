@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="./assets/img/4geeks.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tu Generador de Excusas de confianza</title>
+    <title>Tu Generador de Excusas</title>
 
     <!-- Bootstrap -->
     <link
@@ -12,41 +12,40 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
 
-    <!-- Fuente alternativa -->
+    <!-- Fuente -->
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Archivo CSS propio -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- 🔹 Paredes de cubos -->
+    <!-- Paredes glitch -->
     <div class="cube-wall left-wall" id="leftWall"></div>
     <div class="cube-wall right-wall" id="rightWall"></div>
 
-    <!-- Contenido principal -->
     <div class="container-fluid text-center position-relative" style="z-index: 2;">
       <h1 class="bitcount-title">10 km de seriedad</h1>
 
       <img
         src="https://static.vecteezy.com/system/resources/previews/044/013/811/large_2x/cute-cartoon-drawing-of-a-robot-illustration-free-vector.jpg"
         alt="Caricatura robot"
+        class="img-fluid my-3"
       />
 
-      <!-- 🔹 Aquí se inserta el dominio -->
-      <p class="alert alert-warning mt-4" id="excuse">Aquí va tu dominio...</p>
+      <p class="alert alert-warning mt-4" id="excuse">Aquí va tu excusa...</p>
 
-      <button id="generateBtn" class="btn btn-warning mt-3">Generar Dominio</button>
+      <!-- Botón principal -->
+      <button id="generateBtn" class="btn btn-warning mt-3">Generar Excusa</button>
 
-      <div class="fixed-bottom text-center p-3">
+      <!-- Footer -->
+      <div class="fixed-bottom text-center p-3 footer-text">
         Made with ❤️ by
-        <a href="https://github.com/LinaR3">LinaR3</a>
+        <a href="https://github.com/LinaR3" target="_blank">LinaR3</a>
       </div>
     </div>
 
-    <!-- Archivo JS propio -->
-    <script type="module" src="app.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

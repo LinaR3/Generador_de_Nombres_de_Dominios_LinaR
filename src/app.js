@@ -1,41 +1,33 @@
 console.log("Empezare a trabajar");
 
 // Arrays base
-let pronoun = ['the', 'our', 'my'];
-let adj = ['great', 'big', 'best', 'cool'];
-let noun = ['jogger', 'racoon', 'studio', 'net', 'app'];
-let extensions = ['.com', '.net', '.us', '.io', '.es'];
+let pronoun = ['El', 'Mi', 'Nuestro','La', 'Su'];
+let adj = ['gran', 'hermos@', 'autentico', 'inteligente'];
+let noun = ['perro', 'mapache', 'chigüiro', 'gato', 'pez', 'abuel@', 'padre'];
+let verbo = ['arruino', 'se comio', 'saboteo', 'cancelo', 'daño', 'secuestro', 'me convencio'];
 
-// Elementos del DOM
+
+
 const excuseElement = document.getElementById("excuse");
 const btn = document.getElementById("generateBtn");
 
-// Función que genera un dominio aleatorio
-function generateDomain() {
-  let i = Math.floor(Math.random() * pronoun.length);
-  let j = Math.floor(Math.random() * adj.length);
-  let k = Math.floor(Math.random() * noun.length);
-  let l = Math.floor(Math.random() * extensions.length);
+// 🔹 Generar excusa
+function generateExcuse() {
+  const p = pronoun[Math.floor(Math.random() * pronoun.length)];
+  const a = adj[Math.floor(Math.random() * adj.length)];
+  const n = noun[Math.floor(Math.random() * noun.length)];
+  const e = verbo[Math.floor(Math.random() * verbo.length)];
 
-  if (noun[k].endsWith(extensions[l].substring(1))) {
-    let hackNoun = noun[k].slice(0, noun[k].length - extensions[l].length + 1);
-    return pronoun[i] + adj[j] + hackNoun + extensions[l] + " (domain hack)";
-  } else {
-    return pronoun[i] + adj[j] + noun[k] + extensions[l];
-  }
+  excuseElement.textContent = `Lo siento, ${p} ${a} ${n} ${e} (...).`;
 }
 
-// Evento click para generar un nuevo dominio
-btn.addEventListener("click", () => {
-  excuseElement.textContent = generateDomain();
-});
+// Evento del botón
+btn.addEventListener("click", generateExcuse);
 
-console.log("Ya generé unos dominios :)");
-
-// 🔹 Animación de cubos laterales (glitch)
+// (glitch)
 function createCubes(wallId) {
   const wall = document.getElementById(wallId);
-  for (let i = 0; i < 300; i++) {
+  for (let i = 0; i < 200; i++) { // 
     const cube = document.createElement("div");
     cube.classList.add("cube");
     wall.appendChild(cube);
@@ -45,7 +37,7 @@ function createCubes(wallId) {
 createCubes("leftWall");
 createCubes("rightWall");
 
-// Cambiar colores de cubos aleatoriamente (amarillo → gris)
+// Cambiar colores de cubos aleatoriamente (amarillo & gris)
 setInterval(() => {
   document.querySelectorAll(".cube").forEach(cube => {
     const colors = ["#ffcc00", "#ffaa00", "#999", "#bbb", "#666"];
