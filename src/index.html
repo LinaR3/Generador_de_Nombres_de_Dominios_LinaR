@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="./assets/img/4geeks.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-
-    <!-- Fontawesome is our recomended library for icons -->
+    <title>Generador de Dominios</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -15,21 +18,23 @@
     />
   </head>
   <body>
-    <!-- Write your HTML code here, you can delete everything withing the body tags -->
     <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./assets/img/rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
+      
+      <div class="main-card">
+          <h1 class="mb-3">Generador Automático de Dominios</h1>
+          <p class="summary-text mb-4">
+              Hemos generado <strong id="domain-count">0</strong> combinaciones únicas.
+          </p>
+
+          <div id="results-list" class="results-container">
+              </div>
+      </div>
+      
       <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+        Made with <i class="fas fa-heart text-danger"></i> by LinaR3
       </div>
     </div>
 
-    <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
     <script type="module" src="/app.js"></script>
   </body>
 </html>
