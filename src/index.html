@@ -1,40 +1,48 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="./assets/img/4geeks.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Generador de Dominios</title>
-    
+    <title>Generador de Dominios | LinaR3</title>
+    <link rel="icon" href="./assets/img/4geeks.ico" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <div class="container-fluid text-center">
-      
-      <div class="main-card">
-          <h1 class="mb-3">Generador Automático de Dominios</h1>
-          <p class="summary-text mb-4">
-              Hemos generado <strong id="domain-count">0</strong> combinaciones únicas.
-          </p>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+</head>
 
-          <div id="results-list" class="results-container">
-              </div>
-      </div>
-      
-      <div class="fixed-bottom p-4">
-        Made with <i class="fas fa-heart text-danger"></i> by LinaR3
-      </div>
-    </div>
+<body>
+    <main class="main-container">
+        <header class="text-center">
+            <h1>Generador de Dominios</h1>
+            <p class="subtitle">
+                Descubre ideas únicas de nombres para tu próximo gran proyecto.
+            </p>
+        </header>
+
+        <section class="results-card">
+            <h2 class="results-heading">Resultados</h2>
+            <p class="results-summary">
+                Página <strong id="current-page">1</strong> de <strong id="total-pages">0</strong> (<strong id="domain-count">0</strong> combinaciones)
+            </p>
+
+            <div id="results-list" class="results-list">
+                </div>
+            
+            <div class="pagination-controls">
+                <button id="prev-btn" class="pagination-btn">Anterior</button>
+                <button id="next-btn" class="pagination-btn">Siguiente</button>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Hecho con <i class="fas fa-heart"></i> por LinaR3</p>
+    </footer>
 
     <script type="module" src="/app.js"></script>
-  </body>
+</body>
 </html>

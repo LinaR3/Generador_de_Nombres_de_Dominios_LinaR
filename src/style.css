@@ -2,46 +2,89 @@
 
 /* Paleta de colores en escala de azules */
 :root {
-  --blue-dark: #1e3a8a;       
-  --blue-medium: #3b82f6;     
-  --blue-light: #dbeafe;      
-  --bg-color: #f8fafc;        
-  --text-color: #0f172a;      
-  --border-color: #e2e8f0;    
+  --blue-dark: #1e3a8a;
+  --blue-medium: #3b82f6;
+  --blue-light: #dbeafe;
+  --bg-color: #f8fafc;
+  --text-color: #0f172a;
+  --border-color: #e2e8f0;
 }
 
+/* Estilo del contenedor principal */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: 'Inter', sans-serif; 
+  font-family: 'Inter', sans-serif;
   min-height: 100vh;
 }
 
-.main-card {
+/* Estilo para el contenedor principal de la página */
+.main-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+/* Estilo para la tarjeta de resultados */
+.results-card {
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  padding: 3rem;
-  max-width: 800px;
-  margin: 3rem auto;
+  padding: 2.5rem;
+  margin-top: 2rem;
+  text-align: center; /* Centramos el botón */
 }
 
+/* Estilo de los encabezados */
 h1 {
   color: var(--blue-dark);
   font-weight: 700;
   letter-spacing: -0.5px;
 }
 
-.summary-text {
+.subtitle, .results-summary {
   font-size: 1.1rem;
   color: #64748b;
 }
 
-.results-container {
-  max-height: 60vh;
+.results-heading {
+  color: var(--blue-dark);
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo del botón "Generar" */
+.generate-btn {
+  background-color: var(--blue-medium);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem; /* Añadimos un margen superior para separarlo de la lista */
+}
+
+.generate-btn:hover {
+  background-color: var(--blue-dark);
+}
+
+.generate-btn:disabled {
+  background-color: #d1d5db;
+  cursor: not-allowed;
+}
+
+/* Estilo de la lista de resultados */
+.results-list {
+  max-height: 50vh;
   overflow-y: auto;
   padding-right: 1rem;
-  padding-left: 1rem;
+  text-align: left; /* Alineamos el texto de la lista a la izquierda */
 }
 
 ul {
@@ -51,33 +94,85 @@ ul {
 }
 
 .domain-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--blue-light);
   color: var(--blue-dark);
   padding: 0.75rem 1rem;
   margin-bottom: 0.5rem;
   border-radius: 8px;
-  font-family: monospace; 
-  font-size: 1rem;
+  font-family: monospace;
+  font-size: 1.1rem;
   transition: all 0.2s ease-in-out;
 }
 
 .domain-item:hover {
   background-color: var(--blue-medium);
   color: white;
-  transform: translateY(-2px); 
+  transform: translateY(-2px);
 }
 
-/* Pie de página */
-.fixed-bottom {
-  background: white;
-  border-top: 1px solid var(--border-color);
+.domain-item:hover .copy-btn {
+  background-color: white;
+  color: var(--blue-medium);
+}
+
+/* Estilo del botón de copiar */
+.copy-btn {
+  background: none;
+  border: none;
+  color: var(--blue-dark);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.loading-spinner {
+    font-size: 1.5rem;
+    color: var(--blue-medium);
+    margin-top: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.site-footer {
+  text-align: center;
   font-size: 0.9rem;
   color: #64748b;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
 }
 
-@media (max-width: 768px) {
-  .main-card {
-    padding: 1.5rem;
-    margin: 1.5rem auto;
-  }
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.pagination-btn {
+    background-color: white;
+    color: var(--blue-dark);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--blue-dark);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.pagination-btn:hover {
+    background-color: var(--blue-dark);
+    color: white;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
