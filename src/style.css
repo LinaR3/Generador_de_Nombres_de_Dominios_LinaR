@@ -12,10 +12,10 @@
 
 /* Estilo del contenedor principal */
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: 'Inter', sans-serif;
-  min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Barlow', sans-serif; 
+    min-height: 100vh;
 }
 
 /* Estilo para el contenedor principal de la página */
@@ -32,7 +32,7 @@ body {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   padding: 2.5rem;
   margin-top: 2rem;
-  text-align: center; /* Centramos el botón */
+  text-align: center; 
 }
 
 /* Estilo de los encabezados */
@@ -55,7 +55,6 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-/* Estilo del botón "Generar" */
 .generate-btn {
   background-color: var(--blue-medium);
   color: white;
@@ -67,7 +66,7 @@ h1 {
   cursor: pointer;
   transition: background-color 0.3s ease;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem; /* Añadimos un margen superior para separarlo de la lista */
+  margin-top: 2rem; 
 }
 
 .generate-btn:hover {
@@ -79,12 +78,11 @@ h1 {
   cursor: not-allowed;
 }
 
-/* Estilo de la lista de resultados */
 .results-list {
   max-height: 50vh;
   overflow-y: auto;
   padding-right: 1rem;
-  text-align: left; /* Alineamos el texto de la lista a la izquierda */
+  text-align: left;
 }
 
 ul {
@@ -118,7 +116,7 @@ ul {
   color: var(--blue-medium);
 }
 
-/* Estilo del botón de copiar */
+
 .copy-btn {
   background: none;
   border: none;
